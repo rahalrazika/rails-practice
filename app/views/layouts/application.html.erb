@@ -11,14 +11,12 @@
   </head>
 
   <body>
-  <header>
-  <h1>Eventz</h1>
-  </header>
+ <%= render  "layouts/header" %>
   <div class="content">
+<%= render  "layouts/flash" %>
+
   <%= yield %>
   </div>
-    <footer>
-    <p>Made by Mz</p>
-    </footer>
+    <%= render  "layouts/footer" %>
   </body>
 </html>

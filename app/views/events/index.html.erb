@@ -1,9 +1,15 @@
-<ul>
+<section class="events">
 <% @events.each do |event| %>
-<li> <%= event.name %> </li>
+<div class="image">
+   <%= image_tag event.image_file_name %>
+</div>
+<li > <%= link_to event.name, event_path(event) %> </li>
 <li> <%= event.location %> </li>
 <li> <%= price(event) %></li>
 <p> <%= truncate(event.description, length: 35, separator:'') %></p>
-<p><%= day_and_time(event) %></p>
+<p class="event"><%= day_and_time(event) %></p>
 <% end %>
-</ul>
+</section>
+<section>
+<%= link_to  "New Event", new_event_path %>
+</section>

@@ -1,0 +1,18 @@
+<%= form_with(model: event, local: true) do |f| %>
+ <%= render 'shared/errors', object: event %>
+<%= f.label :name %>
+<%= f.text_field :name, autofocus: true %>
+<%= f.label :description %>
+<%= f.text_field :description, rows: 5 %>
+<%= f.label :location %>
+<%= f.text_field :location %>
+<%= f.label :price %>
+<%= f.number_field :price %>
+<%= f.label :start_at %>
+<%= f.datetime_select :start_at, {ampm: true}, {class: "datetime"} %>
+<%= f.label :capacity %>
+<%= f.number_field :capacity %>
+<%= f.label :image_file_name %>
+<%= f.text_field :image_file_name %>
+ <%= f.submit %>
+<% end %>

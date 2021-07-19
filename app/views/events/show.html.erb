@@ -1,0 +1,18 @@
+<section>
+<div class="image">
+   <%= image_tag @event.image_file_name %>
+</div>
+<h1> <%= @event.name %> </h1>
+<h2> <%= @event.location %> </h2>
+<h2> 
+<%= pluralize(@event.capacity, "spot")%> &bull;
+<%= price(@event) %></h2>
+<p> <%= truncate(@event.description, length: 35, separator:'') %></p>
+<p><%= day_and_time(@event) %></p>
+
+</section>
+
+<section>
+ <%= link_to  "Edit", edit_event_path(@event), class: 'button' %>
+ <%= link_to  "Delete", @event, method: :delete, data: { confirm: 'Are you sure?' } %>
+</section>

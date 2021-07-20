@@ -10,6 +10,11 @@
 <p> <%= truncate(@event.description, length: 35, separator:'') %></p>
 <p><%= day_and_time(@event) %></p>
 
+<div>
+<%= link_to  "Regester?", new_event_regestration_path(@event) %>
+<%= link_to  "regestrations list", event_regestrations_path(@event) %>
+
+</div>
 </section>
 
 <section>

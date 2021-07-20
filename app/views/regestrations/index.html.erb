@@ -1,0 +1,8 @@
+<h1>Regestrations for <%= link_to  @event.name , @event %></h1>
+<ul>
+<% @regestrations.each do |r| %>
+<li>
+  <%= r.name %> &bull; <%= r.how_heard%>
+</li>
+<% end %>
+</ul>

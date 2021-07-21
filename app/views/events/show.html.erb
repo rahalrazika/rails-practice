@@ -11,13 +11,14 @@
 <p><%= day_and_time(@event) %></p>
 
 <div>
-<%= link_to  "Regester?", new_event_regestration_path(@event) %>
-<%= link_to  "regestrations list", event_regestrations_path(@event) %>
+<%= register_or_sold_out(@event) %>
+<%= link_to  "registrations list", event_regestrations_path(@event) %>
 
 </div>
 </section>
-
+<% if current_user_admin? %>
 <section>
  <%= link_to  "Edit", edit_event_path(@event), class: 'button' %>
  <%= link_to  "Delete", @event, method: :delete, data: { confirm: 'Are you sure?' } %>
 </section>
+<%end%>

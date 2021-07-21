@@ -10,6 +10,8 @@
 <p class="event"><%= day_and_time(event) %></p>
 <% end %>
 </section>
+<% if current_user_admin?%>
 <section>
 <%= link_to  "New Event", new_event_path %>
 </section>
+<% end %>

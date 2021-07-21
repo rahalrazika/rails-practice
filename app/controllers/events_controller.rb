@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+  before_action :require_signin, except: %i[index show]
+  before_action :require_admin, except: %i[index show]
+
   def index
     @events = Event.upcaming
   end

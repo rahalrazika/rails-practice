@@ -1,0 +1,11 @@
+<section>
+<h1><%= @user.name %></h1>
+<h2><%=  mail_to(@user.email) %></h2>
+<% if current_user?(@user)%>
+
+<div>
+ <%= link_to  "EDit ACCOUNT", edit_user_path(@user) %>
+ <%= link_to  "Delete", @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+<% end %>
+</section>

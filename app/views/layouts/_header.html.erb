@@ -7,5 +7,25 @@
    <%= link_to "All EVENTS", events_path %>
    </li>
    </ul>
+    <ul>
+  <% if current_user %>
+   <li>
+      <%= link_to  current_user.name, current_user %>
+   </li>
+    <li>
+      <%= link_to "SIGN OUT", session_path, method: :delete %>
+   </li>
+    <% else %>
+      
+   <li>
+     <%= link_to "SIGN IN", new_session_path %>
+   </li>
+   <li>
+     <%= link_to "SIGN UP", signup_path %>
+   </li>
+  <% end %>
+
+
+   </ul>
    </nav>
   </header>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_21_182222) do
+ActiveRecord::Schema.define(version: 2021_07_21_220819) do
 
   create_table "events", force: :cascade do |t|
     t.string "name"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 2021_07_21_182222) do
     t.text "description"
     t.string "image_file_name", default: "placeholder.png"
     t.integer "capacity", default: 1
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "event_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_likes_on_event_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "regestrations", force: :cascade do |t|
@@ -42,5 +51,7 @@ ActiveRecord::Schema.define(version: 2021_07_21_182222) do
     t.boolean "admin", default: false
   end
 
+  add_foreign_key "likes", "events"
+  add_foreign_key "likes", "users"
   add_foreign_key "regestrations", "events"
 end

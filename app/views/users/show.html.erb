@@ -8,4 +8,31 @@
  <%= link_to  "Delete", @user, method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>
 <% end %>
+<% if @regestrations.present? %>
+<h3>Regestrations</h3>
+<% @regestrations.each do |r|%>
+<div class="regestration">
+ <div class="image">
+ <%= link_to  image_tag(r.event.image_file_name), r.event %>
+ </div>
+ <div class="name">
+ <%= link_to  r.event.name, r.event %>
+ </div>
+
+ <div class="date">
+ <%= time_ago_in_words(r.created_at) %> ago
+ </div>
+</div>
+
+<% end %>
+<% end %>
+<% if @liked_event.present? %>
+<h3>Liked events</h3>
+<div class="liked_events image">
+<% @liked_event.each do |event|%>
+<%= link_to image_tag(event.image_file_name), event %>
+<% end %>
+
+</div>
+<% end %>
 </section>

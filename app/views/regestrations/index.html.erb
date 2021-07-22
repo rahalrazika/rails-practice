@@ -2,7 +2,7 @@
 <ul>
 <% @regestrations.each do |r| %>
 <li>
-  <%= r.name %> &bull; <%= r.how_heard%>
+  <%= link_to r.user.name, r.user %> &bull; <%= r.how_heard%>
 </li>
 <% end %>
 </ul>

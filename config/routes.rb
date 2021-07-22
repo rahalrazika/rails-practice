@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
- 
   root 'events#index'
   resources :events do
     resources :regestrations
+    resources :likes
   end
   resource :session, only: %i[new create destroy]
   resources :users

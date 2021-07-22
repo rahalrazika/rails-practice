@@ -14,5 +14,9 @@
 <%= f.number_field :capacity %>
 <%= f.label :image_file_name %>
 <%= f.text_field :image_file_name %>
+
+<div class="check_box">
+  <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
+</div>
  <%= f.submit %>
 <% end %>

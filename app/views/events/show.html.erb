@@ -33,7 +33,19 @@
 
 </ul>
 <% end %>
+
 </aside>
+<section>
+<% if @categories.present?%>
+<h4>Categories</h4>
+<ul>
+<% @categories.each do |c| %>
+<li><%= c.name %></li>
+<% end %>
+</ul>
+<% end %>
+</section>
+
 </section>
 <% if current_user_admin? %>
 <section>

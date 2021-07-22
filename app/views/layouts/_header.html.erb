@@ -4,7 +4,16 @@
    <h1>  <%= link_to "Eventz", root_path %> </h1>
    <ul>
    <li>
-   <%= link_to "All EVENTS", events_path %>
+   <%= link_to "upComing", events_path %>
+   </li>
+    <li>
+   <%= link_to "Past", filtred_events_path(:past) %>
+   </li>
+    <li>
+   <%= link_to "Free", filtred_events_path(:free) %>
+   </li>
+     <li>
+   <%= link_to "Recent", filtred_events_path(:recent) %>
    </li>
    </ul>
     <ul>

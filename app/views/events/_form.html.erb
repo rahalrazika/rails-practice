@@ -12,8 +12,8 @@
 <%= f.datetime_select :start_at, {ampm: true}, {class: "datetime"} %>
 <%= f.label :capacity %>
 <%= f.number_field :capacity %>
-<%= f.label :image_file_name %>
-<%= f.text_field :image_file_name %>
+<%= f.label :main_image %>
+<%= f.file_field :main_image %>
 
 <div class="check_box">
   <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>

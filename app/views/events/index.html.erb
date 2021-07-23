@@ -1,7 +1,7 @@
 <section class="events">
 <% @events.each do |event| %>
 <div class="image">
-   <%= image_tag event.image_file_name %>
+<%= main_image(event) %>
 </div>
 <li > <%= link_to event.name, event_path(event) %> </li>
 <li> <%= event.location %> </li>

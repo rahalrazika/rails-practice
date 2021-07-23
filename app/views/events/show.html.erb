@@ -1,6 +1,6 @@
 <section>
 <div class="image">
-   <%= image_tag @event.image_file_name %>
+   <%= main_image(@event) %>
    <% if current_user %>
    <div class="likes">
     <%= like_or_unlike(@event, @like) %>
